@@ -30,7 +30,7 @@ class Dictado(models.Model):
 	pasabilidadP = models.DecimalField(max_digits=4,decimal_places=2,null=True)
 
 	def __unicode__(self):
-		return str(self.curso)+" - "+str(self.semestre /10)+" "+str(self.semestre%10)
+		return (str(self.curso)+" - "+str(self.semestre /10)+" "+str(self.semestre%10)).decode('utf-8')
 
 class Estudiante(models.Model):
 	nombre = models.CharField(max_length = 70)
@@ -49,4 +49,4 @@ class Comentario(models.Model):
 	conocimiento = models.IntegerField(default=0)
 	pasabilidad = models.IntegerField(default=0)
 	def __unicode__(self):
-		return str(self.autor)+" - "+str(self.fecha)
+		return (str(self.autor)+" - "+str(self.fecha)).decode('utf-8')
